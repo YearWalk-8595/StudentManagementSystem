@@ -1,0 +1,750 @@
+/* 学生信息系统仪表盘样式 */
+
+.student-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}  
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+
+.dashboard-container {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+  width: 200px;
+  background-color: #f5f5f5;
+  padding: 20px 0;
+}
+
+.sidebar-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-left: 4px solid transparent;
+}
+
+.sidebar-item:hover {
+  background-color: #e9e9e9;
+}
+
+.sidebar-item.active {
+  background-color: #e0e0e0;
+  border-left-color: #4CAF50;
+  font-weight: bold;
+}
+
+/* 内容区域样式 */
+.content-area {
+  flex: 1;
+  padding: 25px;
+  min-height: 500px;
+}
+
+/* 个人中心样式 */
+.personal-center h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.info-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.student-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  margin-bottom: 10px;
+}
+
+.info-label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #555;
+}
+
+.info-value {
+  color: #333;
+}
+
+/* 奖牌样式 */
+.medals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.medal {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.medal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 锁定状态奖牌 */
+.medal-locked {
+  border-color: #ccc;
+  opacity: 0.7;
+  background-color: #f0f0f0;
+}
+
+/* 初级奖牌 - 蓝色 */
+.medal-blue {
+  border-color: #2196F3;
+  background: linear-gradient(to bottom, #ffffff, #e6f2ff);
+  box-shadow: 0 3px 10px rgba(33, 150, 243, 0.2);
+}
+
+.medal-blue .medal-icon {
+  color: #2196F3;
+}
+
+/* 中级奖牌 - 黄色 */
+.medal-gold {
+  border-color: #FFC107;
+  background: linear-gradient(to bottom, #ffffff, #fff8e1);
+  box-shadow: 0 3px 10px rgba(255, 193, 7, 0.2);
+}
+
+.medal-gold .medal-icon {
+  color: #FFC107;
+}
+
+/* 高级奖牌 - 橙色 */
+.medal-orange {
+  border-color: #FF5722;
+  background: linear-gradient(to bottom, #ffffff, #ffebe5);
+  box-shadow: 0 3px 10px rgba(255, 87, 34, 0.2);
+}
+
+.medal-orange .medal-icon {
+  color: #FF5722;
+}
+
+/* 大师奖牌 - 炫彩 */
+.medal-rainbow {
+  border-color: #9c27b0;
+  background: linear-gradient(45deg, #f3e5f5, #e1bee7, #ce93d8, #ba68c8);
+  background-size: 400% 400%;
+  animation: rainbow-bg 3s ease infinite;
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+}
+
+/* 至尊奖牌 - 华丽黄金 */
+.medal-supreme {
+  border-color: #FFD700;
+  background: linear-gradient(45deg, #FFF9C4, #FFEB3B, #FFC107, #FF9800);
+  background-size: 400% 400%;
+  animation: supreme-bg 4s ease infinite;
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+@keyframes supreme-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.medal-supreme .medal-icon {
+  animation: supreme-pulse 2s infinite;
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 165, 0, 0.7);
+  font-size: 2.2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.medal-supreme .medal-name,
+.medal-supreme .medal-status {
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+/* 光晕特效已移除 */
+
+.medal-supreme .medal-effect .particles {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  z-index: 2;
+}
+
+.medal-supreme .medal-effect .particles .particle {
+  width: 6px;
+  height: 6px;
+  transform-origin: center;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0;
+  animation: star-twinkle 3s infinite;
+  position: absolute;
+}
+
+/* 至尊奖牌特有的放射状光芒 */
+.medal-supreme .medal-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220%;
+  height: 220%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.9) 10%,
+    rgba(255, 215, 0, 0.7) 25%,
+    rgba(255, 215, 0, 0.4) 40%,
+    rgba(255, 215, 0, 0.2) 60%,
+    rgba(255, 215, 0, 0) 80%
+  );
+  z-index: -1;
+  animation: ray-shine 6s ease-in-out infinite;
+  filter: blur(3px);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+@keyframes ray-shine {
+  0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.8); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  100% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+/* 添加放射性光线效果 */
+.medal-supreme .medal-rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 创建8条放射性光线 */
+.medal-supreme .medal-rays::before,
+.medal-supreme .medal-rays::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 215, 0, 0) 80%);
+  transform-origin: left center;
+  animation: ray-rotate 12s linear infinite, ray-pulse 4s ease-in-out infinite;
+}
+
+.medal-supreme .medal-rays::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation: ray-rotate 12s linear infinite reverse, ray-pulse 5s ease-in-out infinite;
+}
+
+/* 创建额外的斜向光线 */
+.medal-supreme .medal-rays-diagonal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.medal-supreme .medal-rays-diagonal::before,
+.medal-supreme .medal-rays-diagonal::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180%;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(255, 165, 0, 0.9) 0%, rgba(255, 165, 0, 0) 80%);
+  transform-origin: left center;
+  animation: ray-rotate 15s linear infinite, ray-pulse 6s ease-in-out infinite;
+}
+
+.medal-supreme .medal-rays-diagonal::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation: ray-rotate 15s linear infinite reverse, ray-pulse 7s ease-in-out infinite;
+}
+
+/* 添加额外的短光线 */
+.medal-supreme .medal-rays-short {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) rotate(22.5deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.medal-supreme .medal-rays-short::before,
+.medal-supreme .medal-rays-short::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 0, 0.9) 0%, rgba(255, 255, 0, 0) 70%);
+  transform-origin: left center;
+  animation: ray-rotate 18s linear infinite, ray-pulse-short 3s ease-in-out infinite;
+}
+
+.medal-supreme .medal-rays-short::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation: ray-rotate 18s linear infinite reverse, ray-pulse-short 4s ease-in-out infinite;
+}
+
+/* 光线旋转动画 */
+@keyframes ray-rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 光线脉冲动画 */
+@keyframes ray-pulse {
+  0% { opacity: 0.3; width: 160%; }
+  50% { opacity: 0.8; width: 200%; }
+  100% { opacity: 0.3; width: 160%; }
+}
+
+@keyframes ray-pulse-short {
+  0% { opacity: 0.2; width: 120%; }
+  50% { opacity: 0.7; width: 140%; }
+  100% { opacity: 0.2; width: 120%; }
+}
+
+@keyframes supreme-shine {
+  0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  20% { opacity: 0.3; transform: scale(0.8) rotate(72deg); }
+  40% { opacity: 0.6; transform: scale(1.2) rotate(144deg); }
+  60% { opacity: 0.8; transform: scale(1.5) rotate(216deg); }
+  80% { opacity: 0.4; transform: scale(1.0) rotate(288deg); }
+  100% { opacity: 0; transform: scale(0.5) rotate(360deg); }
+}
+
+@keyframes supreme-stars {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  25% { opacity: 0.8; transform: scale(1.0); }
+  50% { opacity: 1; transform: scale(1.1); }
+  75% { opacity: 0.8; transform: scale(1.0); }
+  100% { opacity: 0.3; transform: scale(0.8); }
+}
+
+@keyframes supreme-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes star-twinkle {
+  0% { transform: scale(0.5); opacity: 0; }
+  25% { transform: scale(1.5); opacity: 0.8; }
+  50% { transform: scale(2.0); opacity: 1; }
+  75% { transform: scale(1.5); opacity: 0.8; }
+  100% { transform: scale(0.5); opacity: 0; }
+}
+
+/* 为每个星星设置不同的位置和动画延迟 */
+.medal-supreme .medal-effect .particles .particle:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+  background-color: rgba(255, 0, 0, 0.9);
+  box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(2) {
+  top: 15%;
+  left: 80%;
+  animation-delay: 0.3s;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(0, 255, 0, 0.9);
+  box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(3) {
+  top: 30%;
+  left: 40%;
+  animation-delay: 0.6s;
+  background-color: rgba(0, 0, 255, 0.9);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(4) {
+  top: 40%;
+  left: 70%;
+  animation-delay: 0.9s;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 0, 0.9);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(5) {
+  top: 60%;
+  left: 30%;
+  animation-delay: 1.2s;
+  background-color: rgba(255, 0, 255, 0.9);
+  box-shadow: 0 0 10px 5px rgba(255, 0, 255, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(6) {
+  top: 70%;
+  left: 60%;
+  animation-delay: 1.5s;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(7) {
+  top: 80%;
+  left: 25%;
+  animation-delay: 1.8s;
+  background-color: rgba(255, 165, 0, 0.9);
+  box-shadow: 0 0 10px 5px rgba(255, 165, 0, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(8) {
+  top: 85%;
+  left: 75%;
+  animation-delay: 2.1s;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(128, 0, 128, 0.9);
+  box-shadow: 0 0 10px 5px rgba(128, 0, 128, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(9) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 2.4s;
+  background-color: rgba(0, 128, 0, 0.9);
+  box-shadow: 0 0 10px 5px rgba(0, 128, 0, 0.7);
+}
+
+.medal-supreme .medal-effect .particles .particle:nth-child(10) {
+  top: 25%;
+  left: 90%;
+  animation-delay: 2.7s;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(0, 0, 128, 0.9);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 128, 0.7);
+}
+
+@keyframes supreme-sweep {
+  0% { background-position: 0% 0%; opacity: 0.5; }
+  25% { opacity: 0.7; }
+  50% { opacity: 0.9; }
+  75% { opacity: 0.7; }
+  100% { background-position: 200% 200%; opacity: 0.5; }
+}
+
+@keyframes supreme-pulse {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(5deg); }
+  50% { transform: scale(1.3) rotate(0deg); }
+  75% { transform: scale(1.2) rotate(-5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes rainbow-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.medal-rainbow .medal-icon {
+  animation: pulse 2s infinite;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* 大师奖牌特效 - 增强版 */
+.medal-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.medal-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0;
+  animation: shine 4s ease-in-out infinite;
+}
+
+.medal-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.4) 25%, 
+    rgba(255,255,255,0.8) 50%, 
+    rgba(255,255,255,0.4) 75%, 
+    rgba(255,255,255,0) 100%);
+  background-size: 200% 200%;
+  opacity: 0.6;
+  animation: shine-sweep 3s linear infinite;
+}
+
+/* 粒子效果容器 */
+.medal-effect .particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 创建多个粒子 */
+.medal-effect .particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* 为每个粒子设置不同的动画 */
+.medal-effect .particle:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: particle-1 3s infinite;
+}
+
+.medal-effect .particle:nth-child(2) {
+  top: 70%;
+  left: 30%;
+  animation: particle-2 4s infinite;
+}
+
+.medal-effect .particle:nth-child(3) {
+  top: 40%;
+  left: 80%;
+  animation: particle-3 5s infinite;
+}
+
+.medal-effect .particle:nth-child(4) {
+  top: 60%;
+  left: 60%;
+  animation: particle-4 3.5s infinite;
+}
+
+.medal-effect .particle:nth-child(5) {
+  top: 30%;
+  left: 50%;
+  animation: particle-5 4.5s infinite;
+}
+
+.medal-effect .particle:nth-child(6) {
+  top: 80%;
+  left: 25%;
+  animation: particle-6 3.2s infinite;
+}
+
+.medal-effect .particle:nth-child(7) {
+  top: 15%;
+  left: 85%;
+  animation: particle-7 4.8s infinite;
+}
+
+.medal-effect .particle:nth-child(8) {
+  top: 50%;
+  left: 15%;
+  animation: particle-8 3.7s infinite;
+}
+
+.medal-effect .particle:nth-child(9) {
+  top: 75%;
+  left: 75%;
+  animation: particle-9 4.2s infinite;
+}
+
+.medal-effect .particle:nth-child(10) {
+  top: 25%;
+  left: 40%;
+  animation: particle-10 3.9s infinite;
+}
+
+@keyframes shine {
+  0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  50% { opacity: 0.7; transform: scale(1.2) rotate(180deg); }
+  100% { opacity: 0; transform: scale(0.5) rotate(360deg); }
+}
+
+@keyframes shine-sweep {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+
+@keyframes particle-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(50px, -35px) scale(2.0); opacity: 1; }
+}
+
+@keyframes particle-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(-45px, 30px) scale(2.0); opacity: 1; }
+}
+
+@keyframes particle-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(-30px, -45px) scale(2.0); opacity: 1; }
+}
+
+@keyframes particle-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(40px, 40px) scale(2.0); opacity: 1; }
+}
+
+@keyframes particle-5 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(45px, 20px) scale(2.0); opacity: 1; }
+}
+
+@keyframes particle-6 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(-40px, -30px) scale(2.2); opacity: 1; }
+}
+
+@keyframes particle-7 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(30px, 45px) scale(2.1); opacity: 1; }
+}
+
+@keyframes particle-8 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(50px, 15px) scale(2.0); opacity: 1; }
+}
+
+@keyframes particle-9 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(-25px, -50px) scale(2.3); opacity: 1; }
+}
+
+@keyframes particle-10 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(15px, 55px) scale(1.9); opacity: 1; }
+}
+
+.medal-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.medal-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.medal-status {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* 加载和错误状态 */
+.content-loading {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.content-error {
+  padding: 20px;
+  text-align: center;
+  color: #d32f2f;
+}
+
+/* 即将推出的功能样式 */
+.coming-soon {
+  text-align: center;
+  padding: 50px 20px;
+  color: #666;
+  font-style: italic;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 20px;
+}

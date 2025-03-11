@@ -1,0 +1,24 @@
+{
+  "name": "firebase-auth-demo",
+  "version": "1.0.0",
+  "description": "Firebase认证系统示例",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "parcel:start": "parcel index.html",
+    "parcel:build": "parcel build index.html"
+  },
+  "dependencies": {
+    "firebase": "^10.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "parcel": "^2.13.3",
+    "vite": "^5.0.0"
+  }
+}
