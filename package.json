@@ -8,10 +8,8 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "NODE_ENV=production vite build",
-    "preview": "vite preview",
-    "parcel:start": "parcel index.html",
-    "parcel:build": "parcel build index.html"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "chart.js": "^4.4.8",
@@ -23,7 +21,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.0",
-    "parcel": "^2.13.3",
     "vite": "^5.0.0"
   }
 }
